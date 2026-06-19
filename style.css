@@ -1,0 +1,228 @@
+/* File: style.css */
+
+:root {
+    --bg-primary: #f8fafc;
+    --sidebar-bg: #0f172a;
+    --sidebar-color: #94a3b8;
+    --text-main: #1e293b;
+    --accent-color: #3b82f6;
+    --card-bg: #ffffff;
+    --border-color: #e2e8f0;
+}
+
+* { 
+    margin: 0; 
+    padding: 0; 
+    box-sizing: border-box; 
+    font-family: 'Inter', sans-serif; 
+}
+
+body { 
+    display: flex; 
+    background-color: var(--bg-primary); 
+    color: var(--text-main); 
+    min-height: 100vh; 
+}
+
+/* --- SIDEBAR STYLE --- */
+.sidebar { 
+    width: 260px; 
+    background-color: var(--sidebar-bg); 
+    padding: 24px; 
+    display: flex; 
+    flex-direction: column; 
+    position: fixed; 
+    height: 100vh; 
+}
+
+.sidebar-brand { 
+    color: #fff; 
+    font-size: 1.25rem; 
+    font-weight: 700; 
+    margin-bottom: 40px; 
+    display: flex; 
+    align-items: center; 
+    gap: 10px; 
+}
+
+.sidebar-brand i { 
+    color: var(--accent-color); 
+}
+
+.sidebar-menu { 
+    list-style: none; 
+    display: flex; 
+    flex-direction: column; 
+    gap: 8px; 
+}
+
+.menu-item { 
+    display: flex; 
+    align-items: center; 
+    gap: 12px; 
+    padding: 12px 16px; 
+    color: var(--sidebar-color); 
+    text-decoration: none; 
+    border-radius: 8px; 
+    font-weight: 500; 
+    transition: all 0.2s ease; 
+    cursor: pointer; 
+}
+
+.menu-item:hover, .menu-item.active { 
+    background-color: #1e293b; 
+    color: #fff; 
+}
+
+.menu-item.active i { 
+    color: var(--accent-color); 
+}
+
+/* --- MAIN CONTENT STYLE --- */
+.main-content { 
+    margin-left: 260px; 
+    flex: 1; 
+    padding: 40px; 
+    width: calc(100% - 260px); 
+}
+
+.header { 
+    margin-bottom: 32px; 
+}
+
+.header h1 { 
+    font-size: 1.75rem; 
+    font-weight: 700; 
+    color: #0f172a; 
+}
+
+.header p { 
+    color: #64748b; 
+    margin-top: 4px; 
+    font-size: 0.95rem; 
+}
+
+/* --- STATS CARDS GRID --- */
+.stats-grid { 
+    display: grid; 
+    grid-template-columns: repeat(4, 1fr); 
+    gap: 24px; 
+    margin-bottom: 40px; 
+}
+
+.stat-card { 
+    background: var(--card-bg); 
+    padding: 24px; 
+    border-radius: 12px; 
+    border: 1px solid var(--border-color); 
+    display: flex; 
+    align-items: center; 
+    justify-content: space-between; 
+    box-shadow: 0 1px 3px rgba(0,0,0,0.02); 
+}
+
+.stat-info h3 { 
+    font-size: 0.875rem; 
+    color: #64748b; 
+    font-weight: 500; 
+    text-transform: uppercase; 
+    letter-spacing: 0.5px; 
+}
+
+.stat-info p { 
+    font-size: 1.75rem; 
+    font-weight: 700; 
+    color: #0f172a; 
+    margin-top: 8px; 
+}
+
+.stat-icon { 
+    width: 48px; 
+    height: 48px; 
+    border-radius: 10px; 
+    display: flex; 
+    align-items: center; 
+    justify-content: center; 
+    font-size: 1.25rem; 
+}
+
+.bg-blue { background: #eff6ff; color: #3b82f6; }
+.bg-green { background: #f0fdf4; color: #22c55e; }
+.bg-purple { background: #faf5ff; color: #a855f7; }
+.bg-amber { background: #fffbeb; color: #f59e0b; }
+
+/* --- TABLE SECTION STYLE --- */
+.section-panel { 
+    background: var(--card-bg); 
+    border-radius: 12px; 
+    border: 1px solid var(--border-color); 
+    box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05); 
+    padding: 24px; 
+    display: none; 
+}
+
+.section-panel.active { 
+    display: block; 
+    animation: fadeIn 0.3s ease; 
+}
+
+.section-title { 
+    font-size: 1.2rem; 
+    font-weight: 600; 
+    margin-bottom: 20px; 
+    color: #0f172a; 
+    display: flex; 
+    align-items: center; 
+    gap: 8px; 
+}
+
+.table-responsive { 
+    overflow-x: auto; 
+}
+
+table { 
+    width: 100%; 
+    border-collapse: collapse; 
+    text-align: left; 
+}
+
+th { 
+    background: #f8fafc; 
+    padding: 14px 16px; 
+    font-size: 0.875rem; 
+    font-weight: 600; 
+    color: #64748b; 
+    border-bottom: 2px solid var(--border-color); 
+}
+
+td { 
+    padding: 16px; 
+    font-size: 0.925rem; 
+    color: #334155; 
+    border-bottom: 1px solid var(--border-color); 
+}
+
+tr:last-child td { 
+    border-bottom: none; 
+}
+
+tr:hover td { 
+    background-color: #f8fafc; 
+}
+
+/* Badge component */
+.badge { 
+    display: inline-block; 
+    padding: 4px 8px; 
+    font-size: 0.75rem; 
+    font-weight: 600; 
+    border-radius: 6px; 
+}
+.badge-reguler { background-color: #eff6ff; color: #1d4ed8; }
+.badge-prestasi { background-color: #f0fdf4; color: #15803d; }
+.badge-kedinasan { background-color: #faf5ff; color: #6b21a8; }
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(4px); }
+    to { opacity: 1; transform: translateY(0); }
+}
